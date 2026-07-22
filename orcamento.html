@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orçamento | Weld Car Service</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Weld <span>Car Service</span>
+</div>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="portfolio.html">Portfólio</a>
+<a href="orcamento.html">Orçamento</a>
+</nav>
+
+</header>
+
+<section class="hero" style="height:50vh;">
+
+<div>
+
+<h1>Solicite seu <span>Orçamento</span></h1>
+
+<p>
+Preencha os dados abaixo e envie sua solicitação pelo WhatsApp.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Formulário de Orçamento</h2>
+
+<form id="orcamentoForm">
+
+<label>Nome</label>
+<input type="text" id="nome" required>
+
+<label>Telefone</label>
+<input type="tel" id="telefone" required>
+
+<label>Modelo do veículo</label>
+<input type="text" id="veiculo">
+
+<label>Serviço desejado</label>
+
+<select id="servico">
+
+<option>Funilaria</option>
+<option>Pintura</option>
+<option>Funilaria + Pintura</option>
+<option>Polimento Técnico</option>
+<option>Vitrificação</option>
+<option>Martelinho de Ouro</option>
+
+</select>
+
+<label>Descrição</label>
+
+<textarea id="descricao"
+placeholder="Descreva o problema do veículo..."></textarea>
+
+<label>Fotos do veículo</label>
+
+<input
+type="file"
+accept="image/*"
+multiple>
+
+<button type="submit">
+Enviar pelo WhatsApp
+</button>
+
+</form>
+
+</section>
+
+<section>
+
+<h2>Como funciona?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>1️⃣ Preencha</h3>
+<p>Informe os dados do veículo.</p>
+</div>
+
+<div class="card">
+<h3>2️⃣ Envie</h3>
+<p>Você será direcionado ao WhatsApp.</p>
+</div>
+
+<div class="card">
+<h3>3️⃣ Avaliação</h3>
+<p>Nossa equipe fará uma análise inicial.</p>
+</div>
+
+<div class="card">
+<h3>4️⃣ Agendamento</h3>
+<p>Marcamos o melhor horário para o atendimento.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Weld Car Service</h3>
+
+<p>Especialistas em Funilaria e Pintura</p>
+
+</footer>
+
+<script>
+
+document
+.getElementById("orcamentoForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let nome=document.getElementById("nome").value;
+
+let telefone=document.getElementById("telefone").value;
+
+let veiculo=document.getElementById("veiculo").value;
+
+let servico=document.getElementById("servico").value;
+
+let descricao=document.getElementById("descricao").value;
+
+// ALTERE PARA O NÚMERO DA EMPRESA
+let numero="5511960153407";
+
+let mensagem=
+
+`*NOVO ORÇAMENTO*
+
+Nome: ${nome}
+
+Telefone: ${telefone}
+
+Veículo: ${veiculo}
+
+Serviço: ${servico}
+
+Descrição:
+${descricao}`;
+
+window.open(
+
+`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
+
+"_blank"
+
+);
+
+});
+
+</script>
+
+</body>
+</html>

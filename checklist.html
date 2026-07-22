@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checklist do Veículo | Weld Car Service</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.checklist-box{
+    max-width:900px;
+    margin:auto;
+    background:#1a1a1a;
+    padding:30px;
+    border-radius:15px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-bottom:1px solid #333;
+}
+
+.item:last-child{
+    border-bottom:none;
+}
+
+.item label{
+    font-size:18px;
+}
+
+input[type="checkbox"]{
+    transform:scale(1.3);
+    cursor:pointer;
+}
+
+textarea{
+    width:100%;
+    height:150px;
+    margin-top:20px;
+}
+
+.botoes{
+    display:flex;
+    gap:20px;
+    margin-top:25px;
+}
+
+.botoes button{
+    flex:1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Weld <span>Car Service</span>
+</div>
+
+<nav>
+
+<a href="index.html">Início</a>
+<a href="portfolio.html">Portfólio</a>
+<a href="orcamento.html">Orçamento</a>
+<a href="checklist.html">Checklist</a>
+
+</nav>
+
+</header>
+
+<section class="hero" style="height:45vh;">
+
+<div>
+
+<h1>Checklist do <span>Veículo</span></h1>
+
+<p>
+Inspeção inicial antes do reparo.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="checklist-box">
+
+<h2>Inspeção Geral</h2>
+
+<div class="item">
+<label>Pneus</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Rodas</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Faróis</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Lanternas</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Retrovisores</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Para-brisa</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Vidros</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Lataria</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Pintura</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Capô</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Portas</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Para-choques</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Motor</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Interior</label>
+<input type="checkbox">
+</div>
+
+<div class="item">
+<label>Documentação</label>
+<input type="checkbox">
+</div>
+
+<h3 style="margin-top:30px;">
+Observações
+</h3>
+
+<textarea placeholder="Descreva riscos, amassados, peças danificadas e outras observações..."></textarea>
+
+<div class="botoes">
+
+<button onclick="window.print()">
+🖨️ Imprimir / Salvar PDF
+</button>
+
+<button onclick="enviarWhatsApp()">
+📱 Enviar Checklist
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Weld Car Service</h3>
+
+<p>Especialistas em Funilaria e Pintura</p>
+
+</footer>
+
+<script>
+
+function enviarWhatsApp(){
+
+let obs=document.querySelector("textarea").value;
+
+let itens=document.querySelectorAll("input[type=checkbox]");
+
+let nomes=document.querySelectorAll(".item label");
+
+let texto="*CHECKLIST DO VEÍCULO*%0A%0A";
+
+for(let i=0;i<itens.length;i++){
+
+texto+=nomes[i].innerText+" : ";
+
+texto+=itens[i].checked ? "OK" : "Pendente";
+
+texto+="%0A";
+
+}
+
+texto+="%0AObservações:%0A"+obs;
+
+// Troque pelo número da empresa
+window.open(
+"https://wa.me/5511960153407?text="+texto
+);
+
+}
+
+</script>
+
+</body>
+</html>
