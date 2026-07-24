@@ -416,7 +416,7 @@ width:65px;
 
 height:65px;
 
-background:#25D366;
+background:#222;
 
 border-radius:50%;
 
@@ -432,7 +432,7 @@ text-decoration:none;
 
 color:white;
 
-box-shadow:0 0 20px rgba(0,255,0,.5);
+box-shadow:0 0 20px rgba(0, 0, 0, 0.5);
 
 transition:.3s;
 
